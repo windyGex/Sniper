@@ -13,43 +13,43 @@ Sniper
 
   * 下面的选择器将被解析为一个对象
       
-      div.class1.class2.class3[type="text"]["data-type"="cc"]:nth-child(2n+1) 
-  
-        {
-               tagName: 'div',
-               id: '',
-               className: ['class1', 'class2', 'class3'],
-               attr: [{
-                   name: 'type',
-                   value: 'text'
-               }, {
-                   name: 'data-type',
-                   value: 'cc'
-               }],
-               pseudo: [{
-                   name: 'nth-child',
-                   index: '2n+1'
-               }]
-        }
+          div.class1.class2.class3[type="text"]["data-type"="cc"]:nth-child(2n+1) 
       
+            {
+                   tagName: 'div',
+                   id: '',
+                   className: ['class1', 'class2', 'class3'],
+                   attr: [{
+                       name: 'type',
+                       value: 'text'
+                   }, {
+                       name: 'data-type',
+                       value: 'cc'
+                   }],
+                   pseudo: [{
+                       name: 'nth-child',
+                       index: '2n+1'
+                   }]
+            }
+          
   * 下面的选择器被解析为一个数组
       
-      div.class &gt; p 
-  
-      [{
-              tagName: 'p',
-              id: '',
-              className: [],
-              attr: [],
-              pseudo: []
-      },{
-              tagName: 'div',
-              id: '',
-              className: ['class'],
-              attr: [],
-              pseudo: [],
-              separator: '&gt;'
-      }]
+          div.class &gt; p 
+      
+          [{
+                  tagName: 'p',
+                  id: '',
+                  className: [],
+                  attr: [],
+                  pseudo: []
+          },{
+                  tagName: 'div',
+                  id: '',
+                  className: ['class'],
+                  attr: [],
+                  pseudo: [],
+                  separator: '&gt;'
+          }]
 
 *  Simple.query(/*String*/selector,/*HTMLElement*/context)
 
@@ -63,12 +63,12 @@ Sniper
 
     > 该方法用于扩展选择器的实现 
     
-    Simple.query.implement('pseudo', {
-      root:function(node){
-                return node.tagName.toLowerCase() === 'html';
-      }
-    });
-    Simple.query(':root');
+        Simple.query.implement('pseudo', {
+          root:function(node){
+                    return node.tagName.toLowerCase() === 'html';
+          }
+        });
+        Simple.query(':root');
 
 *  Simple.match(node,selector)
 
